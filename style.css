@@ -22,16 +22,16 @@ body {
 }
 
 #day,
-#date,
-#time {
+#date {
   font-family: "Muli";
   font-size: 2em;
   text-align: center;
   margin: auto;
 }
 
-/*
-http://cdn.backgroundhost.com/backgrounds/subtlepatterns/argyle.png
-
-https://i.postimg.cc/vZCK5hH6/background.png
-*/
+#time {
+  font-family: "Muli";
+  font-size: 5em;
+  text-align: center;
+  margin: auto;
+}

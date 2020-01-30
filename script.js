@@ -45,3 +45,28 @@ function date() {
 
   document.getElementById("date").innerHTML = fullDate;
 }
+
+function time() {
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  let seconds = now.getSeconds();
+  let timeOfDay;
+
+  if (hours < 12) {
+    timeOfDay = "AM";
+  } else {
+    timeOfDay = "PM";
+  }
+
+  if (hours > 12) {
+    hours = hours - 12;
+  }
+
+  hours = (hours < 10 ? "0" : "") + hours;
+  minutes = (minutes < 10 ? "0" : "") + minutes;
+  seconds = (seconds < 10 ? "0" : "") + seconds;
+
+  let fullTime = hours + ":" + minutes + ":" + seconds + " " + timeOfDay;
+
+  document.getElementById("time").innerHTML = fullTime;
+}
