@@ -16,13 +16,8 @@ function day() {
   let theDay = now.getDay();
   let nameOfDay = dayNames[theDay];
 
-  console.log(nameOfDay);
+  document.getElementById("day").innerHTML = nameOfDay;
 }
-
-// Only need for the console
-// Remove when finished
-console.log("From the day function");
-day();
 
 function date() {
   let monthNames = [
@@ -44,12 +39,7 @@ function date() {
   let theDate = now.getDate();
   let theYear = now.getFullYear();
 
-  console.log(nameOfMonth);
-  console.log(theDate);
-  console.log(theYear);
-}
+  let fullDate = nameOfMonth + " " + theDate + "," + " " + theYear;
 
-// Only need for the console
-// Remove when finished
-console.log("From the date function");
-date();
+  document.getElementById("date").innerHTML = fullDate;
+}

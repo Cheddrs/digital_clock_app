@@ -12,5 +12,14 @@ This project was built by Corey Hedberg for the Software Development Mastermind 
   font-family: "Dancing Script";
   font-size: 2.5em;
   text-align: center;
-  margin-top: 3em;
+  margin-top: 1.6em;
+}
+
+#day,
+#date,
+#time {
+  font-family: "Muli";
+  font-size: 2em;
+  text-align: center;
+  margin: auto;
 }
