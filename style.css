@@ -7,8 +7,9 @@ This project was built by Corey Hedberg for the Software Development Mastermind 
 @import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
 
 body {
-  background: url("https://i.postimg.cc/vZCK5hH6/background.png");
+  background: url("http://cdn.backgroundhost.com/backgrounds/subtlepatterns/argyle.png");
   background-repeat: repeat;
+  color: #ffffff;
 }
 
 #weekday_text,
@@ -28,3 +29,9 @@ body {
   text-align: center;
   margin: auto;
 }
+
+/*
+http://cdn.backgroundhost.com/backgrounds/subtlepatterns/argyle.png
+
+https://i.postimg.cc/vZCK5hH6/background.png
+*/

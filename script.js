@@ -4,6 +4,7 @@ This project was built by Corey Hedberg for the Software Development Mastermind 
 
 let now = new Date();
 
+/* Displays the current day on the website. */
 function day() {
   let dayNames = [
     "Sunday",
@@ -19,6 +20,7 @@ function day() {
   document.getElementById("day").innerHTML = nameOfDay;
 }
 
+/* Displays the current date on the website. */
 function date() {
   let monthNames = [
     "January",
