@@ -46,6 +46,7 @@ function date() {
   document.getElementById("date").innerHTML = fullDate;
 }
 
+/* Displays the current time on the website */
 function time() {
   let hours = now.getHours();
   let minutes = now.getMinutes();
@@ -62,11 +63,26 @@ function time() {
     hours = hours - 12;
   }
 
-  hours = (hours < 10 ? "0" : "") + hours;
-  minutes = (minutes < 10 ? "0" : "") + minutes;
-  seconds = (seconds < 10 ? "0" : "") + seconds;
+  if (hours < 10) {
+    hours = "0" + hours;
+  }
+
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
 
   let fullTime = hours + ":" + minutes + ":" + seconds + " " + timeOfDay;
 
   document.getElementById("time").innerHTML = fullTime;
+
+  setTimeout(time, 1000);
 }
+
+day();
+date();
+time();
+// setInterval(time, 1000);
