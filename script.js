@@ -79,7 +79,7 @@ function time() {
 
   document.getElementById("time").innerHTML = fullTime;
 
-  setTimeout(time, 1000);
+  requestAnimationFrame(time);
 }
 
 day();
