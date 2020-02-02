@@ -6,7 +6,7 @@ Digital clock app written with HTML, CSS and JavaScript.
 
 <br>
 
-View it [here](https://cheddrs.github.io/digital_clock_app/)
+Click [here](https://cheddrs.github.io/digital_clock_app/) to view it.
 
 <br>
 
