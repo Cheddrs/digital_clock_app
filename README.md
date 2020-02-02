@@ -1,4 +1,4 @@
-# Day | Date | Time
+# Digital Clock App
 
 <br>
 
