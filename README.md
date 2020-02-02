@@ -18,4 +18,4 @@ This the first project I completed for the Software Development Mastermind progr
 
 ## Author
 
-* **Corey Hedberg** - *Software Developer* - [LinkedIn](https://www.linkedin.com/in/coreyhedberg/)
+**Corey Hedberg** - _Software Developer_ - [LinkedIn](https://www.linkedin.com/in/coreyhedberg/)
