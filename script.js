@@ -1,11 +1,6 @@
-/*
-This project was built by Corey Hedberg for the Software Development Mastermind program
-*/
-
-let now = new Date();
-
-/* Displays the current day on the website. */
+/* Displays the current day */
 function day() {
+  let nowDay = new Date();
   let dayNames = [
     "Sunday",
     "Monday",
@@ -15,14 +10,15 @@ function day() {
     "Friday",
     "Saturday"
   ];
-  let theDay = now.getDay();
+  let theDay = nowDay.getDay();
   let nameOfDay = dayNames[theDay];
 
   document.getElementById("day").innerHTML = nameOfDay;
 }
 
-/* Displays the current date on the website. */
+/* Displays the current date */
 function date() {
+  let nowDate = new Date();
   let monthNames = [
     "January",
     "February",
@@ -37,21 +33,22 @@ function date() {
     "November",
     "December"
   ];
-  let theMonth = now.getMonth();
+  let theMonth = nowDate.getMonth();
   let nameOfMonth = monthNames[theMonth];
-  let theDate = now.getDate();
-  let theYear = now.getFullYear();
+  let theDate = nowDate.getDate();
+  let theYear = nowDate.getFullYear();
 
   let fullDate = nameOfMonth + " " + theDate + "," + " " + theYear;
 
   document.getElementById("date").innerHTML = fullDate;
 }
 
-/* Displays the current time on the website */
+/* Displays the current time */
 function time() {
-  let hours = now.getHours();
-  let minutes = now.getMinutes();
-  let seconds = now.getSeconds();
+  let nowTime = new Date();
+  let hours = nowTime.getHours();
+  let minutes = nowTime.getMinutes();
+  let seconds = nowTime.getSeconds();
   let timeOfDay;
 
   if (hours < 12) {
@@ -83,15 +80,11 @@ function time() {
   let fullTime = hours + ":" + minutes + ":" + seconds + " " + timeOfDay;
 
   document.getElementById("time").innerHTML = fullTime;
-
-  console.log(fullTime);
-
-  // requestAnimationFrame(time);
-  // setTimeout(time, 1000);
 }
 
 day();
+setInterval(day, 1000);
 date();
+setInterval(date, 1000);
 time();
 setInterval(time, 1000);
-// setTimeout(time, 1000);

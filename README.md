@@ -1,8 +1,8 @@
-# Digital Clock App
+# Day | Date | Time
 
 <br>
 
-Digital clock app written with HTML, CSS and JavaScript.
+Website app displaying the day, date, and time written in HTML, CSS and JavaScript.
 
 <br>
 
