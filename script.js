@@ -60,18 +60,6 @@ function time() {
     timeOfDay = "PM";
   }
 
-  // TODO: fix if statement to include midnight.
-  /* 
-  if (hours == 0) {
-    hours = 12;
-  } else if (hours < 10) {
-    hours = "0" + hours;
-  } else if (hours > 12) {
-    hours = hours - 12;
-  } else if (hours - 12 < 10) {
-    hours = "0" + hours;
-  } */
-
   if (hours == 0) {
     hours = 12;
   }
@@ -96,10 +84,10 @@ function time() {
 
   document.getElementById("time").innerHTML = fullTime;
 
-  requestAnimationFrame(time);
+  // requestAnimationFrame(time);
 }
 
 day();
 date();
 time();
-// setInterval(time, 1000);
+setInterval(time, 1000);
