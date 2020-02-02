@@ -85,9 +85,11 @@ function time() {
   document.getElementById("time").innerHTML = fullTime;
 
   // requestAnimationFrame(time);
+  // setTimeout(time, 1000);
 }
 
 day();
 date();
 time();
-setInterval(time, 1000);
+// setInterval(time, 1000);
+setTimeout(time, 1000);
