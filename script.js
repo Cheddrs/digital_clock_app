@@ -88,5 +88,3 @@ date();
 setInterval(date, 1000);
 time();
 setInterval(time, 1000);
-
-// TODO: Get it down to one function.
