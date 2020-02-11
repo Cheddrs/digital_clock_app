@@ -1,6 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Dancing+Script&display=swap");
-
-@import url("https://fonts.googleapis.com/css?family=Muli   &display=swap");
+@import url("https://fonts.googleapis.com/css?family=Dancing+Script|Muli&display=swap");
 
 body {
   background: url("http://cdn.backgroundhost.com/backgrounds/subtlepatterns/argyle.png");
@@ -8,10 +6,10 @@ body {
   color: #ffffff;
 }
 
-#weekday_text,
-#date_text,
-#time_text {
-  font-family: "Dancing Script", serif;
+#weekday-text,
+#date-text,
+#time-text {
+  font-family: "Dancing Script", cursive;
   font-size: 2.5em;
   text-align: center;
   margin-top: 1.6em;
@@ -20,7 +18,7 @@ body {
 #day,
 #date,
 #time {
-  font-family: "Muli", serif;
+  font-family: "Muli", sans-serif;
   font-size: 4em;
   text-align: center;
 }

@@ -1,6 +1,4 @@
-/* Displays the current day */
-function day() {
-  let nowDay = new Date();
+function displayDayOnScreen(now) {
   let dayNames = [
     "Sunday",
     "Monday",
@@ -10,15 +8,13 @@ function day() {
     "Friday",
     "Saturday"
   ];
-  let theDay = nowDay.getDay();
+  let theDay = now.getDay();
   let nameOfDay = dayNames[theDay];
 
   document.getElementById("day").innerHTML = nameOfDay;
 }
 
-/* Displays the current date */
-function date() {
-  let nowDate = new Date();
+function displayDateOnScreen(now) {
   let monthNames = [
     "January",
     "February",
@@ -33,22 +29,20 @@ function date() {
     "November",
     "December"
   ];
-  let theMonth = nowDate.getMonth();
+  let theMonth = now.getMonth();
   let nameOfMonth = monthNames[theMonth];
-  let theDate = nowDate.getDate();
-  let theYear = nowDate.getFullYear();
+  let theDate = now.getDate();
+  let theYear = now.getFullYear();
 
-  let fullDate = nameOfMonth + " " + theDate + "," + " " + theYear;
+  let fullDate = `${nameOfMonth} ${theDate}, ${theYear}`;
 
   document.getElementById("date").innerHTML = fullDate;
 }
 
-/* Displays the current time */
-function time() {
-  let nowTime = new Date();
-  let hours = nowTime.getHours();
-  let minutes = nowTime.getMinutes();
-  let seconds = nowTime.getSeconds();
+function displayTimeOnScreen(now) {
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  let seconds = now.getSeconds();
   let timeOfDay;
 
   if (hours < 12) {
@@ -77,14 +71,18 @@ function time() {
     seconds = "0" + seconds;
   }
 
-  let fullTime = hours + ":" + minutes + ":" + seconds + " " + timeOfDay;
+  let fullTime = `${hours}:${minutes}:${seconds} ${timeOfDay}`;
 
   document.getElementById("time").innerHTML = fullTime;
 }
 
-day();
-setInterval(day, 1000);
-date();
-setInterval(date, 1000);
-time();
-setInterval(time, 1000);
+function renderClock() {
+  const currentDate = new Date();
+
+  displayDayOnScreen(currentDate);
+  displayDateOnScreen(currentDate);
+  displayTimeOnScreen(currentDate);
+}
+
+renderClock();
+setInterval(renderClock, 1000);
