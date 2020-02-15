@@ -20,9 +20,9 @@ Additionally, it is the first project that I have completed from beginning to en
 
 I really learned a lot about creating functions and passing parameters into them.
 
-## Languages & Frameworks Used
+## Languages Used
 
-<img src="media/html.png"> <img src="media/css.png"> <img src="media/js.png">
+<image src="media/html.png"> <image src="media/css.png"> <image src="media/js.png">
 
 ## Author
 
