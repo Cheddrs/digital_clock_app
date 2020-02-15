@@ -20,6 +20,10 @@ Additionally, it is the first project that I have completed from beginning to en
 
 I really learned a lot about creating functions and passing parameters into them.
 
+## Languages & Frameworks Used
+
+<image src="media/html.png"> <image src="media/css.png"> <image src="media/js.png">
+
 ## Author
 
 **Corey Hedberg** | _Software Developer_ | [LinkedIn](https://www.linkedin.com/in/coreyhedberg/)
