@@ -22,7 +22,7 @@ I really learned a lot about creating functions and passing parameters into them
 
 ## Languages Used
 
-<image src="media/html.svg" width="55"> <image src="media/css.svg" width="55"> <image src="media/js.svg" width="55">
+<image src="media/html.svg" width="55">&nbsp; &nbsp; <image src="media/css.svg" width="55">&nbsp; &nbsp; <image src="media/js.svg" width="55">
 
 ## Author
 
