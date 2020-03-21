@@ -6,7 +6,7 @@ Click [here](https://coreyhedberg.github.io/digital_clock_app/) to see what time
 
 ## Languages Used
 
-<image src="media/html.svg" width="55">&nbsp; &nbsp; &nbsp; <image src="media/css.svg" width="55">&nbsp; &nbsp; &nbsp; <image src="media/js.svg" width="55">
+<image src="media/html.svg" width="55">&nbsp; &nbsp; <image src="media/css.svg" width="55">&nbsp; &nbsp; <image src="media/js.svg" width="55">
 
 ## Summary
 
