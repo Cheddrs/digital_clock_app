@@ -20,3 +20,19 @@ body {
   font-size: 4em;
   text-align: center;
 }
+
+.timeButtons {
+  border: none;
+  padding: 6px 8px;
+  border-radius: 3px;
+  width: 8em;
+  background-color: #ffffff;
+  font-family: "Muli";
+  margin: auto;
+  text-align: center;
+}
+
+.timeButtons:hover {
+  cursor: pointer;
+  background-color: #b8f2e6;
+}

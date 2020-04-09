@@ -6,7 +6,7 @@ function displayDayOnScreen(now) {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
   ];
   let theDay = now.getDay();
   let nameOfDay = dayNames[theDay];
@@ -27,7 +27,7 @@ function displayDateOnScreen(now) {
     "September",
     "October",
     "November",
-    "December"
+    "December",
   ];
   let theMonth = now.getMonth();
   let nameOfMonth = monthNames[theMonth];
