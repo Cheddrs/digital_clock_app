@@ -1,16 +1,16 @@
 # Digital Clock App
 
-Website app displaying the day, date, and time written in HTML, CSS and JavaScript.
+Web app that displays the day, date, and time.
 
 Click [here](https://coreyhedberg.github.io/digital_clock_app/) to see what time it is.
 
 ## Languages Used
 
-<image src="media/html.svg" width="55">&nbsp; &nbsp; <image src="media/css.svg" width="55">&nbsp; &nbsp; <image src="media/js.svg" width="55">
+<image src="readme_files/html.svg" width="55">&nbsp; &nbsp; <image src="readme_files/css.svg" width="55">&nbsp; &nbsp; <image src="readme_files/js.svg" width="55">
 
 ## Summary
 
-<image src="media/screenshot.png">
+<image src="readme_files/screenshot.png">
 
 This the first project I completed for the Software Development Mastermind program.
 
@@ -20,4 +20,5 @@ I really learned a lot about creating functions and passing parameters into them
 
 ## Author
 
-**Corey Hedberg** &bull; _Software Developer_ &bull; [LinkedIn](https://www.linkedin.com/in/coreyhedberg/)
+**Corey Hedberg** &bull; _Software Developer_<br>
+[Website](https://coreyhedberg.dev/) | [LinkedIn](https://www.linkedin.com/in/coreyhedberg/)
