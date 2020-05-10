@@ -20,5 +20,5 @@ I really learned a lot about creating functions and passing parameters into them
 
 ## Author
 
-**Corey Hedberg** &bull; _Software Developer_<br>
-[Website](https://coreyhedberg.dev/) | [LinkedIn](https://www.linkedin.com/in/coreyhedberg/)
+**Corey Hedberg** | _Software Developer_<br>
+[Website](https://coreyhedberg.dev/) &bull; [LinkedIn](https://www.linkedin.com/in/coreyhedberg/)
