@@ -84,9 +84,16 @@ html {
   text-align: center;
 }
 
+#change-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 2em;
+  width: 18em;
+  margin: auto;
+}
+
 .timeButtons {
-  display: inline-block;
-  margin: 0 auto;
   border: none;
   padding: 6px 8px;
   border-radius: 3px;

@@ -1,3 +1,19 @@
+let hours;
+let minutes;
+let seconds;
+let fulltime = "";
+const timeId = document.getElementById("time");
+const regularTimeButton = document.getElementById("regular-time");
+const militaryTimeButton = document.getElementById("military-time");
+
+regularTimeButton.addEventListener("click", () => {
+  // pending
+});
+
+militaryTimeButton.addEventListener("click", () => {
+  // pending
+});
+
 function displayDayOnScreen(now) {
   let dayNames = [
     "Sunday",
@@ -39,7 +55,7 @@ function displayDateOnScreen(now) {
   document.getElementById("date").innerHTML = fullDate;
 }
 
-function displayTimeOnScreen(now) {
+function displayRegularTime(now) {
   let hours = now.getHours();
   let minutes = now.getMinutes();
   let seconds = now.getSeconds();
@@ -73,7 +89,29 @@ function displayTimeOnScreen(now) {
 
   let fullTime = `${hours}:${minutes}:${seconds} ${timeOfDay}`;
 
-  document.getElementById("time").innerHTML = fullTime;
+  timeId.innerHTML = fullTime;
+}
+
+function displayMilitaryTime(now) {
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  let seconds = now.getSeconds();
+
+  if (hours < 10) {
+    hours = "0" + hours;
+  }
+
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
+
+  let fullTime = `${hours}:${minutes}:${seconds}`;
+
+  timeId.innerHTML = fullTime;
 }
 
 function renderClock() {
@@ -81,7 +119,7 @@ function renderClock() {
 
   displayDayOnScreen(currentDate);
   displayDateOnScreen(currentDate);
-  displayTimeOnScreen(currentDate);
+  displayRegularTime(currentDate);
 }
 
 renderClock();
