@@ -74,6 +74,7 @@ html {
   font-size: 2.5em;
   text-align: center;
   margin-top: 1.6em;
+  color: #3d518c;
 }
 
 #day,
@@ -82,6 +83,7 @@ html {
   font-family: "Muli", sans-serif;
   font-size: 4em;
   text-align: center;
+  color: #ffff97;
 }
 
 #change-buttons {
