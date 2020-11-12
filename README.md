@@ -10,7 +10,7 @@ Click [here](https://coreyhedberg.github.io/digital_clock_app/) to see what time
 
 ## Summary
 
-<image src="readme_files/screenshot.png">
+<image src="readme_files/screenshot.jpg">
 
 This the first project I completed for the Software Development Mastermind program.
 
