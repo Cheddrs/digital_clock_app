@@ -2,19 +2,20 @@ let hours;
 let minutes;
 let seconds;
 let fulltime = "";
-const timeId = document.getElementById("time");
-const regularTimeButton = document.getElementById("regular-time");
-const militaryTimeButton = document.getElementById("military-time");
+let whichTime;
+const TIMEID = document.getElementById("time");
+const REGULARTIMEBUTTON = document.getElementById("regular-time");
+const MILITARYTIMEBUTTON = document.getElementById("military-time");
 
-regularTimeButton.addEventListener("click", () => {
+REGULARTIMEBUTTON.addEventListener("click", () => {
   // pending
 });
 
-militaryTimeButton.addEventListener("click", () => {
+MILITARYTIMEBUTTON.addEventListener("click", () => {
   // pending
 });
 
-function displayDayOnScreen(now) {
+function displayDay(now) {
   let dayNames = [
     "Sunday",
     "Monday",
@@ -30,7 +31,7 @@ function displayDayOnScreen(now) {
   document.getElementById("day").innerHTML = nameOfDay;
 }
 
-function displayDateOnScreen(now) {
+function displayDate(now) {
   let monthNames = [
     "January",
     "February",
@@ -55,71 +56,42 @@ function displayDateOnScreen(now) {
   document.getElementById("date").innerHTML = fullDate;
 }
 
-function displayRegularTime(now) {
+function displayTime(now) {
   let hours = now.getHours();
   let minutes = now.getMinutes();
   let seconds = now.getSeconds();
-  let timeOfDay;
+  let displayMinutes = minutes < 10 ? `0${minutes}` : minutes;
+  let displaySeconds = seconds < 10 ? `0${seconds}` : seconds;
+  let timeOfDay = hours < 12 ? "AM" : "PM";
 
-  if (hours < 12) {
-    timeOfDay = "AM";
-  } else {
-    timeOfDay = "PM";
-  }
+  let displayHours =
+    hours == 0
+      ? (hours = 12)
+      : hours > 12
+      ? (hours = hours - 12)
+      : hours < 10
+      ? (hours = `0${hours}`)
+      : hours;
 
   if (hours == 0) {
     hours = 12;
-  }
-
-  if (hours > 12) {
+  } else if (hours > 12) {
     hours = hours - 12;
-  }
-
-  if (hours < 10) {
+  } else if (hours < 10) {
     hours = "0" + hours;
   }
 
-  if (minutes < 10) {
-    minutes = "0" + minutes;
-  }
+  let fullTime = `${hours}:${displayMinutes}:${displaySeconds} ${timeOfDay}`;
 
-  if (seconds < 10) {
-    seconds = "0" + seconds;
-  }
-
-  let fullTime = `${hours}:${minutes}:${seconds} ${timeOfDay}`;
-
-  timeId.innerHTML = fullTime;
-}
-
-function displayMilitaryTime(now) {
-  let hours = now.getHours();
-  let minutes = now.getMinutes();
-  let seconds = now.getSeconds();
-
-  if (hours < 10) {
-    hours = "0" + hours;
-  }
-
-  if (minutes < 10) {
-    minutes = "0" + minutes;
-  }
-
-  if (seconds < 10) {
-    seconds = "0" + seconds;
-  }
-
-  let fullTime = `${hours}:${minutes}:${seconds}`;
-
-  timeId.innerHTML = fullTime;
+  TIMEID.innerHTML = fullTime;
 }
 
 function renderClock() {
   const currentDate = new Date();
 
-  displayDayOnScreen(currentDate);
-  displayDateOnScreen(currentDate);
-  displayRegularTime(currentDate);
+  displayDay(currentDate);
+  displayDate(currentDate);
+  displayTime(currentDate);
 }
 
 renderClock();
