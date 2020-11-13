@@ -3,17 +3,23 @@ let minutes;
 let seconds;
 let fulltime = "";
 let whichTime;
+const DAY = document.getElementById("day");
+const DATE = document.getElementById("date");
 const TIMEID = document.getElementById("time");
-const REGULARTIMEBUTTON = document.getElementById("regular-time");
-const MILITARYTIMEBUTTON = document.getElementById("military-time");
+const TIMEBUTTON = document.getElementById("time-button");
 
-REGULARTIMEBUTTON.addEventListener("click", () => {
-  // pending
-});
+TIMEBUTTON.innerHTML = "Click To View Military Time";
+whichTime = true;
 
-MILITARYTIMEBUTTON.addEventListener("click", () => {
-  // pending
+TIMEBUTTON.addEventListener("click", () => {
+  whichTime = true ? false : true;
+
+  whichTime === true
+    ? (TIMEBUTTON.innerHTML = "Click To View Military Time")
+    : (TIMEBUTTON.innerHTML = "Click To View Regular Time");
+  console.log(whichTime);
 });
+// TODO: one button to toggle between the two different times
 
 function displayDay(now) {
   let dayNames = [
@@ -28,7 +34,7 @@ function displayDay(now) {
   let theDay = now.getDay();
   let nameOfDay = dayNames[theDay];
 
-  document.getElementById("day").innerHTML = nameOfDay;
+  DAY.innerHTML = nameOfDay;
 }
 
 function displayDate(now) {
@@ -53,7 +59,7 @@ function displayDate(now) {
 
   let fullDate = `${nameOfMonth} ${theDate}, ${theYear}`;
 
-  document.getElementById("date").innerHTML = fullDate;
+  DATE.innerHTML = fullDate;
 }
 
 function displayTime(now) {
@@ -96,3 +102,5 @@ function renderClock() {
 
 renderClock();
 setInterval(renderClock, 1000);
+
+console.log(whichTime);

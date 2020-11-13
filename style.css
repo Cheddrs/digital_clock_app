@@ -73,7 +73,7 @@ html {
   font-family: "Dancing Script", cursive;
   font-size: 2.5em;
   text-align: center;
-  margin-top: 1.6em;
+  margin-top: 1.5rem;
   color: #3d518c;
 }
 
@@ -86,26 +86,19 @@ html {
   color: #ffff97;
 }
 
-#change-buttons {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding-top: 2em;
-  width: 18em;
-  margin: auto;
-}
-
-.timeButtons {
-  border: none;
-  padding: 6px 8px;
-  border-radius: 3px;
-  width: 8em;
-  background-color: #ffffff;
-  font-family: "Muli";
+#time-change-button {
   text-align: center;
+  padding-top: 2rem;
 }
 
-.timeButtons:hover {
+#time-button {
+  padding: 0.6rem 0.8rem;
+  border: none;
+  border-radius: 10px;
+  width: 12rem;
+}
+
+#time-button:hover {
   cursor: pointer;
-  background-color: #b8f2e6;
+  box-shadow: 0 0 4px 4px #ffff97;
 }
