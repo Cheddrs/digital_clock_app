@@ -10,9 +10,19 @@ const TIMEBUTTON = document.getElementById("time-button");
 
 TIMEBUTTON.innerHTML = "Click To View Military Time";
 whichTime = true;
+// true = regular time
+// false = military time
 
 TIMEBUTTON.addEventListener("click", () => {
-  whichTime = true ? false : true;
+  whichTime = !whichTime;
+
+  if (whichTime === true) {
+    // fullTime = `${hours}:${displayMinutes}:${displaySeconds} ${timeOfDay}`;
+    console.log("whichTime = true");
+  } else {
+    // fullTime = `${hours}:${displayMinutes}:${displaySeconds}`;
+    console.log("whichTime = false");
+  }
 
   whichTime === true
     ? (TIMEBUTTON.innerHTML = "Click To View Military Time")

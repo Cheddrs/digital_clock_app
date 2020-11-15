@@ -100,5 +100,6 @@ html {
 
 #time-button:hover {
   cursor: pointer;
-  box-shadow: 0 0 4px 4px #ffff97;
+  background-color: #153e5f;
+  color: #ffffff;
 }
