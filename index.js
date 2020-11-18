@@ -1,11 +1,7 @@
-let hours;
-let minutes;
-let seconds;
-let fulltime = "";
 let whichTime;
 const DAY = document.getElementById("day");
 const DATE = document.getElementById("date");
-const TIMEID = document.getElementById("time");
+const TIME = document.getElementById("time");
 const TIMEBUTTON = document.getElementById("time-button");
 
 TIMEBUTTON.innerHTML = "Click To View Military Time";
@@ -15,22 +11,22 @@ whichTime = true;
 
 TIMEBUTTON.addEventListener("click", () => {
   whichTime = !whichTime;
-
-  if (whichTime === true) {
-    // fullTime = `${hours}:${displayMinutes}:${displaySeconds} ${timeOfDay}`;
-    console.log("whichTime = true");
-  } else {
-    // fullTime = `${hours}:${displayMinutes}:${displaySeconds}`;
-    console.log("whichTime = false");
-  }
-
   whichTime === true
-    ? (TIMEBUTTON.innerHTML = "Click To View Military Time")
-    : (TIMEBUTTON.innerHTML = "Click To View Regular Time");
-  console.log(whichTime);
-});
-// TODO: one button to toggle between the two different times
+    ? (TIMEBUTTON.innerText = "Click To View Military Time")
+    : (TIMEBUTTON.innerText = "Click To View Standard Time");
 
+  console.log(whichTime);
+
+  /* if (whichTime === true) {
+    TIME.innerHTML = standardTime;
+    console.log(`regular time`);
+  } else {
+    TIME.innerHTML = militaryTime;
+    console.log(`military time`);
+  } */
+});
+
+// Configures and displays the day of the week on the page.
 function displayDay(now) {
   let dayNames = [
     "Sunday",
@@ -47,6 +43,7 @@ function displayDay(now) {
   DAY.innerHTML = nameOfDay;
 }
 
+// Configures and displays the date on the page.
 function displayDate(now) {
   let monthNames = [
     "January",
@@ -72,45 +69,39 @@ function displayDate(now) {
   DATE.innerHTML = fullDate;
 }
 
+// Configures on displays the time on the page.
 function displayTime(now) {
   let hours = now.getHours();
   let minutes = now.getMinutes();
   let seconds = now.getSeconds();
+  let timeOfDay = hours < 12 ? "AM" : "PM";
   let displayMinutes = minutes < 10 ? `0${minutes}` : minutes;
   let displaySeconds = seconds < 10 ? `0${seconds}` : seconds;
-  let timeOfDay = hours < 12 ? "AM" : "PM";
-
   let displayHours =
     hours == 0
       ? (hours = 12)
-      : hours > 12
-      ? (hours = hours - 12)
+      : hours > 12 || hours <= 22
+      ? (hours = `0${hours - 12}`)
       : hours < 10
       ? (hours = `0${hours}`)
       : hours;
 
-  if (hours == 0) {
-    hours = 12;
-  } else if (hours > 12) {
-    hours = hours - 12;
-  } else if (hours < 10) {
-    hours = "0" + hours;
-  }
+  let standardTime = `${displayHours}:${displayMinutes}:${displaySeconds} ${timeOfDay}`;
 
-  let fullTime = `${hours}:${displayMinutes}:${displaySeconds} ${timeOfDay}`;
+  let militaryTime = `${displayHours}:${displayMinutes}:${displaySeconds}`;
 
-  TIMEID.innerHTML = fullTime;
+  whichTime = true
+    ? (TIME.innerText = standardTime)
+    : (TIME.innerText = militaryTime);
 }
 
 function renderClock() {
-  const currentDate = new Date();
+  const CURRENTDATE = new Date();
 
-  displayDay(currentDate);
-  displayDate(currentDate);
-  displayTime(currentDate);
+  displayDay(CURRENTDATE);
+  displayDate(CURRENTDATE);
+  displayTime(CURRENTDATE);
 }
 
 renderClock();
 setInterval(renderClock, 1000);
-
-console.log(whichTime);
