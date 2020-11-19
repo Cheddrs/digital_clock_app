@@ -7,23 +7,13 @@ const TIMEBUTTON = document.getElementById("time-button");
 TIMEBUTTON.innerHTML = "Click To View Military Time";
 whichTime = true;
 // true = regular time
-// false = military time
+// false = standard time
 
 TIMEBUTTON.addEventListener("click", () => {
   whichTime = !whichTime;
   whichTime === true
     ? (TIMEBUTTON.innerText = "Click To View Military Time")
     : (TIMEBUTTON.innerText = "Click To View Standard Time");
-
-  console.log(whichTime);
-
-  /* if (whichTime === true) {
-    TIME.innerHTML = standardTime;
-    console.log(`regular time`);
-  } else {
-    TIME.innerHTML = militaryTime;
-    console.log(`military time`);
-  } */
 });
 
 // Configures and displays the day of the week on the page.
@@ -40,7 +30,7 @@ function displayDay(now) {
   let theDay = now.getDay();
   let nameOfDay = dayNames[theDay];
 
-  DAY.innerHTML = nameOfDay;
+  DAY.innerText = nameOfDay;
 }
 
 // Configures and displays the date on the page.
@@ -66,31 +56,32 @@ function displayDate(now) {
 
   let fullDate = `${nameOfMonth} ${theDate}, ${theYear}`;
 
-  DATE.innerHTML = fullDate;
+  DATE.innerText = fullDate;
 }
 
-// Configures on displays the time on the page.
+// Configures and displays the time on the page.
 function displayTime(now) {
-  let hours = now.getHours();
+  let standardHours = now.getHours();
+  let militaryHours = now.getHours();
   let minutes = now.getMinutes();
   let seconds = now.getSeconds();
-  let timeOfDay = hours < 12 ? "AM" : "PM";
+  let timeOfDay = standardHours < 12 ? "AM" : "PM";
   let displayMinutes = minutes < 10 ? `0${minutes}` : minutes;
   let displaySeconds = seconds < 10 ? `0${seconds}` : seconds;
   let displayHours =
-    hours == 0
-      ? (hours = 12)
-      : hours > 12 || hours <= 22
-      ? (hours = `0${hours - 12}`)
-      : hours < 10
-      ? (hours = `0${hours}`)
-      : hours;
+    standardHours == 0
+      ? (standardHours = 12)
+      : standardHours > 12 || standardHours <= 22
+      ? (standardHours = `0${standardHours - 12}`)
+      : standardHours < 10
+      ? (standardHours = `0${standardHours}`)
+      : standardHours;
 
   let standardTime = `${displayHours}:${displayMinutes}:${displaySeconds} ${timeOfDay}`;
 
-  let militaryTime = `${displayHours}:${displayMinutes}:${displaySeconds}`;
+  let militaryTime = `${militaryHours}:${displayMinutes}:${displaySeconds}`;
 
-  whichTime = true
+  whichTime === true
     ? (TIME.innerText = standardTime)
     : (TIME.innerText = militaryTime);
 }
