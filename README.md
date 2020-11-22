@@ -12,6 +12,8 @@ Click [here](https://coreyhedberg.github.io/digital_clock_app/) to see what time
 
 <image src="readme_files/screenshot.jpg">
 
+[View Lighthouse results](https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fcoreyhedberg.github.io%2Fdigital_clock_app%2F)
+
 This the first project I completed for the Software Development Mastermind program.
 
 Additionally, it is the first project that I have completed from beginning to end and my first repository on Github.

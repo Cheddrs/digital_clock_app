@@ -72,7 +72,7 @@ function displayTime(now) {
   }
 
   if (standardHours > 12) {
-    displayHours = `0${standardHours - 12}`;
+    displayHours = standardHours - 12;
   }
 
   if (standardHours < 10) {
