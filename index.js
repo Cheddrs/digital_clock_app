@@ -67,16 +67,16 @@ function displayTime(now) {
   let displayMinutes = minutes < 10 ? `0${minutes}` : minutes;
   let displaySeconds = seconds < 10 ? `0${seconds}` : seconds;
 
-  if (standardHours == 0) {
-    displayHours = 12;
-  }
-
   if (standardHours > 12) {
     displayHours = standardHours - 12;
   }
 
   if (standardHours < 10) {
     displayHours = `0${standardHours}`;
+  }
+
+  if (standardHours === 0) {
+    displayHours = 12;
   }
 
   if (militaryHours < 12) {
