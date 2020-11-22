@@ -6,8 +6,8 @@ const TIMEBUTTON = document.getElementById("time-button");
 
 TIMEBUTTON.innerHTML = "Click To View Military Time";
 whichTime = true;
-// true = regular time
-// false = standard time
+// true = Standard Time
+// false = Military Time
 
 TIMEBUTTON.addEventListener("click", () => {
   whichTime = !whichTime;
@@ -16,7 +16,6 @@ TIMEBUTTON.addEventListener("click", () => {
     : (TIMEBUTTON.innerText = "Click To View Standard Time");
 });
 
-// Configures and displays the day of the week on the page.
 function displayDay(now) {
   let dayNames = [
     "Sunday",
@@ -33,7 +32,6 @@ function displayDay(now) {
   DAY.innerText = nameOfDay;
 }
 
-// Configures and displays the date on the page.
 function displayDate(now) {
   let monthNames = [
     "January",
@@ -59,23 +57,31 @@ function displayDate(now) {
   DATE.innerText = fullDate;
 }
 
-// Configures and displays the time on the page.
 function displayTime(now) {
   let standardHours = now.getHours();
   let militaryHours = now.getHours();
+  let displayHours;
   let minutes = now.getMinutes();
   let seconds = now.getSeconds();
   let timeOfDay = standardHours < 12 ? "AM" : "PM";
   let displayMinutes = minutes < 10 ? `0${minutes}` : minutes;
   let displaySeconds = seconds < 10 ? `0${seconds}` : seconds;
-  let displayHours =
-    standardHours == 0
-      ? (standardHours = 12)
-      : standardHours > 12 || standardHours <= 22
-      ? (standardHours = `0${standardHours - 12}`)
-      : standardHours < 10
-      ? (standardHours = `0${standardHours}`)
-      : standardHours;
+
+  if (standardHours == 0) {
+    displayHours = 12;
+  }
+
+  if (standardHours > 12) {
+    displayHours = `0${standardHours - 12}`;
+  }
+
+  if (standardHours < 10) {
+    displayHours = `0${standardHours}`;
+  }
+
+  if (militaryHours < 12) {
+    militaryHours = `0${militaryHours}`;
+  }
 
   let standardTime = `${displayHours}:${displayMinutes}:${displaySeconds} ${timeOfDay}`;
 
