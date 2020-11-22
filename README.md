@@ -10,7 +10,7 @@ Click [here](https://coreyhedberg.github.io/digital_clock_app/) to see what time
 
 ## Summary
 
-<image src="readme_files/screenshot.jpg">
+<image src="readme_files/screenshot.gif">
 
 [View Lighthouse results](https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fcoreyhedberg.github.io%2Fdigital_clock_app%2F)
 
