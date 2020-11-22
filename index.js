@@ -60,26 +60,22 @@ function displayDate(now) {
 function displayTime(now) {
   let standardHours = now.getHours();
   let militaryHours = now.getHours();
-  let displayHours;
   let minutes = now.getMinutes();
   let seconds = now.getSeconds();
   let timeOfDay = standardHours < 12 ? "AM" : "PM";
   let displayMinutes = minutes < 10 ? `0${minutes}` : minutes;
   let displaySeconds = seconds < 10 ? `0${seconds}` : seconds;
 
-  if (standardHours > 12) {
-    displayHours = standardHours - 12;
-  }
+  let displayHours =
+    standardHours > 12
+      ? (displayHours = standardHours - 12)
+      : standardHours < 10
+      ? (displayHours = `0${standardHours}`)
+      : standardHours === 0
+      ? (displayHours = 12)
+      : standardHours;
 
-  if (standardHours < 10) {
-    displayHours = `0${standardHours}`;
-  }
-
-  if (standardHours === 0) {
-    displayHours = 12;
-  }
-
-  if (militaryHours < 12) {
+  if (militaryHours < 10) {
     militaryHours = `0${militaryHours}`;
   }
 
