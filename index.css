@@ -94,11 +94,30 @@ html {
   padding: 0.6rem 0.8rem;
   border: none;
   border-radius: 10px;
-  width: 14rem;
+  width: 12rem;
 }
 
 #time-button:hover {
   cursor: pointer;
   background-color: #153e5f;
   color: #ffffff;
+}
+
+@media only screen and (max-width: 600px) {
+  #day,
+  #date,
+  #time {
+    font-size: 2.1rem;
+  }
+
+  .text {
+    font-size: 1.5rem;
+  }
+
+  #time-button {
+    font-size: 0.6rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
+    width: 8rem;
+  }
 }

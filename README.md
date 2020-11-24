@@ -20,6 +20,8 @@ Additionally, it is the first project that I have completed from beginning to en
 
 I really learned a lot about creating functions and passing parameters into them.
 
+Wow, what a time to be alive!! I wrote my first CSS @media query to make the app responsive by screen width! It is really cool.
+
 ## Author
 
 **Corey Hedberg** | _Software Developer_<br>

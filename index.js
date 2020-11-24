@@ -12,8 +12,8 @@ whichTime = true
 TIMEBUTTON.addEventListener("click", () => {
   whichTime = !whichTime
   whichTime === true
-    ? (TIMEBUTTON.innerText = "Click To View Military Time")
-    : (TIMEBUTTON.innerText = "Click To View Standard Time")
+    ? (TIMEBUTTON.innerText = "View Military Time")
+    : (TIMEBUTTON.innerText = "View Standard Time")
 })
 
 function displayDay(now) {
@@ -66,17 +66,14 @@ function displayTime(now) {
   let displayMinutes = minutes < 10 ? `0${minutes}` : minutes
   let displaySeconds = seconds < 10 ? `0${seconds}` : seconds
 
-  if (standardHours === 0) {
-    standardHours = 12
-  }
-
-  if (standardHours > 12) {
-    standardHours = standardHours - 12
-  }
-
-  if (standardHours < 10) {
-    standardHours = `0${standardHours}`
-  }
+  standardHours =
+    standardHours > 12
+      ? standardHours - 12
+      : standardHours < 10
+      ? `0${standardHours}`
+      : standardHours === 0
+      ? 12
+      : standardHours
 
   militaryHours = militaryHours < 10 ? `0${militaryHours}` : militaryHours
 
