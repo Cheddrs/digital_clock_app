@@ -59,6 +59,7 @@ function displayDate(now) {
 
 function displayTime(now) {
   let standardHours = now.getHours();
+  // console.log("Standard Hours first: " + standardHours);
   let militaryHours = now.getHours();
   let minutes = now.getMinutes();
   let seconds = now.getSeconds();
@@ -66,20 +67,21 @@ function displayTime(now) {
   let displayMinutes = minutes < 10 ? `0${minutes}` : minutes;
   let displaySeconds = seconds < 10 ? `0${seconds}` : seconds;
 
-  displayHours =
-    standardHours > 12
-      ? (displayHours = standardHours - 12)
-      : standardHours < 10
-      ? (displayHours = `0${standardHours}`)
-      : standardHours === 0
-      ? (displayHours = 12)
-      : standardHours;
-
-  if (militaryHours < 10) {
-    militaryHours = `0${militaryHours}`;
+  if (standardHours === 0) {
+    standardHours = 12;
   }
 
-  let standardTime = `${displayHours}:${displayMinutes}:${displaySeconds} ${timeOfDay}`;
+  if (standardHours > 12) {
+    standardHours = standardHours - 12;
+  }
+
+  if (standardHours < 10) {
+    standardHours = `0${standardHours}`;
+  }
+
+  militaryHours < 10 ? `0${militaryHours}` : militaryHours;
+
+  let standardTime = `${standardHours}:${displayMinutes}:${displaySeconds} ${timeOfDay}`;
 
   let militaryTime = `${militaryHours}:${displayMinutes}:${displaySeconds}`;
 
