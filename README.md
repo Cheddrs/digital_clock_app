@@ -4,6 +4,8 @@ Web app that displays the day, date, and time.
 
 Click [here](https://coreyhedberg.github.io/digital_clock_app/) to see what time it is.
 
+Click [here](https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fcoreyhedberg.github.io%2Fdigital_clock_app%2F) to view the Lighthouse report.
+
 ## Languages Used
 
 <image src="readme_files/html.svg" width="55">&nbsp; &nbsp; <image src="readme_files/css.svg" width="55">&nbsp; &nbsp; <image src="readme_files/js.svg" width="55">
@@ -11,8 +13,6 @@ Click [here](https://coreyhedberg.github.io/digital_clock_app/) to see what time
 ## Summary
 
 <image src="readme_files/screenshot.gif">
-
-[View Lighthouse results](https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fcoreyhedberg.github.io%2Fdigital_clock_app%2F)
 
 This the first project I completed for the Software Development Mastermind program.
 

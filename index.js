@@ -1,17 +1,15 @@
-let whichTime
+let standardTime
 const DAY = document.getElementById("day")
 const DATE = document.getElementById("date")
 const TIME = document.getElementById("time")
 const TIMEBUTTON = document.getElementById("time-button")
 
-TIMEBUTTON.innerHTML = "Click To View Military Time"
-whichTime = true
-// true = Standard Time
-// false = Military Time
+TIMEBUTTON.innerHTML = "View Military Time"
+standardTime = true
 
 TIMEBUTTON.addEventListener("click", () => {
-  whichTime = !whichTime
-  whichTime === true
+  standardTime = !standardTime
+  standardTime === true
     ? (TIMEBUTTON.innerText = "View Military Time")
     : (TIMEBUTTON.innerText = "View Standard Time")
 })
@@ -77,13 +75,13 @@ function displayTime(now) {
 
   militaryHours = militaryHours < 10 ? `0${militaryHours}` : militaryHours
 
-  let standardTime = `${standardHours}:${displayMinutes}:${displaySeconds} ${timeOfDay}`
+  let standardTimeDisplay = `${standardHours}:${displayMinutes}:${displaySeconds} ${timeOfDay}`
 
-  let militaryTime = `${militaryHours}:${displayMinutes}:${displaySeconds}`
+  let militaryTimeDisplay = `${militaryHours}:${displayMinutes}:${displaySeconds}`
 
-  whichTime === true
-    ? (TIME.innerText = standardTime)
-    : (TIME.innerText = militaryTime)
+  standardTime === true
+    ? (TIME.innerText = standardTimeDisplay)
+    : (TIME.innerText = militaryTimeDisplay)
 }
 
 function renderClock() {

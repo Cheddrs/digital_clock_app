@@ -94,7 +94,7 @@ html {
   padding: 0.6rem 0.8rem;
   border: none;
   border-radius: 10px;
-  width: 12rem;
+  width: 10rem;
 }
 
 #time-button:hover {
@@ -112,12 +112,5 @@ html {
 
   .text {
     font-size: 1.5rem;
-  }
-
-  #time-button {
-    font-size: 0.6rem;
-    padding: 0.4rem 0.6rem;
-    border-radius: 8px;
-    width: 8rem;
   }
 }
