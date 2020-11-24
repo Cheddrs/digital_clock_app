@@ -1,20 +1,20 @@
-let whichTime;
-const DAY = document.getElementById("day");
-const DATE = document.getElementById("date");
-const TIME = document.getElementById("time");
-const TIMEBUTTON = document.getElementById("time-button");
+let whichTime
+const DAY = document.getElementById("day")
+const DATE = document.getElementById("date")
+const TIME = document.getElementById("time")
+const TIMEBUTTON = document.getElementById("time-button")
 
-TIMEBUTTON.innerHTML = "Click To View Military Time";
-whichTime = true;
+TIMEBUTTON.innerHTML = "Click To View Military Time"
+whichTime = true
 // true = Standard Time
 // false = Military Time
 
 TIMEBUTTON.addEventListener("click", () => {
-  whichTime = !whichTime;
+  whichTime = !whichTime
   whichTime === true
     ? (TIMEBUTTON.innerText = "Click To View Military Time")
-    : (TIMEBUTTON.innerText = "Click To View Standard Time");
-});
+    : (TIMEBUTTON.innerText = "Click To View Standard Time")
+})
 
 function displayDay(now) {
   let dayNames = [
@@ -25,11 +25,11 @@ function displayDay(now) {
     "Thursday",
     "Friday",
     "Saturday",
-  ];
-  let theDay = now.getDay();
-  let nameOfDay = dayNames[theDay];
+  ]
+  let theDay = now.getDay()
+  let nameOfDay = dayNames[theDay]
 
-  DAY.innerText = nameOfDay;
+  DAY.innerText = nameOfDay
 }
 
 function displayDate(now) {
@@ -46,57 +46,56 @@ function displayDate(now) {
     "October",
     "November",
     "December",
-  ];
-  let theMonth = now.getMonth();
-  let nameOfMonth = monthNames[theMonth];
-  let theDate = now.getDate();
-  let theYear = now.getFullYear();
+  ]
+  let theMonth = now.getMonth()
+  let nameOfMonth = monthNames[theMonth]
+  let theDate = now.getDate()
+  let theYear = now.getFullYear()
 
-  let fullDate = `${nameOfMonth} ${theDate}, ${theYear}`;
+  let fullDate = `${nameOfMonth} ${theDate}, ${theYear}`
 
-  DATE.innerText = fullDate;
+  DATE.innerText = fullDate
 }
 
 function displayTime(now) {
-  let standardHours = now.getHours();
-  // console.log("Standard Hours first: " + standardHours);
-  let militaryHours = now.getHours();
-  let minutes = now.getMinutes();
-  let seconds = now.getSeconds();
-  let timeOfDay = standardHours < 12 ? "AM" : "PM";
-  let displayMinutes = minutes < 10 ? `0${minutes}` : minutes;
-  let displaySeconds = seconds < 10 ? `0${seconds}` : seconds;
+  let standardHours = now.getHours()
+  let militaryHours = now.getHours()
+  let minutes = now.getMinutes()
+  let seconds = now.getSeconds()
+  let timeOfDay = standardHours < 12 ? "AM" : "PM"
+  let displayMinutes = minutes < 10 ? `0${minutes}` : minutes
+  let displaySeconds = seconds < 10 ? `0${seconds}` : seconds
 
   if (standardHours === 0) {
-    standardHours = 12;
+    standardHours = 12
   }
 
   if (standardHours > 12) {
-    standardHours = standardHours - 12;
+    standardHours = standardHours - 12
   }
 
   if (standardHours < 10) {
-    standardHours = `0${standardHours}`;
+    standardHours = `0${standardHours}`
   }
 
-  militaryHours < 10 ? `0${militaryHours}` : militaryHours;
+  militaryHours = militaryHours < 10 ? `0${militaryHours}` : militaryHours
 
-  let standardTime = `${standardHours}:${displayMinutes}:${displaySeconds} ${timeOfDay}`;
+  let standardTime = `${standardHours}:${displayMinutes}:${displaySeconds} ${timeOfDay}`
 
-  let militaryTime = `${militaryHours}:${displayMinutes}:${displaySeconds}`;
+  let militaryTime = `${militaryHours}:${displayMinutes}:${displaySeconds}`
 
   whichTime === true
     ? (TIME.innerText = standardTime)
-    : (TIME.innerText = militaryTime);
+    : (TIME.innerText = militaryTime)
 }
 
 function renderClock() {
-  const CURRENTDATE = new Date();
+  const CURRENTDATE = new Date()
 
-  displayDay(CURRENTDATE);
-  displayDate(CURRENTDATE);
-  displayTime(CURRENTDATE);
+  displayDay(CURRENTDATE)
+  displayDate(CURRENTDATE)
+  displayTime(CURRENTDATE)
 }
 
-renderClock();
-setInterval(renderClock, 1000);
+renderClock()
+setInterval(renderClock, 1000)
